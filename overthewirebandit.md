@@ -24,7 +24,24 @@
  2. **Using Input Redirection (`cat < -`)**: 
    The `<` operator redirects the contents of the file named `-` directly into `cat` for reading.
 ---
+**3.Level 2 -> 3**
+ **Current password:** PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+ **Target password:** 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
 
+ **Command used:** 
+ -To connect: `ssh bandit2@bandit.labs.overthewire.org -p 2220`
+ -To solve: 2 ways | 1.`cat ./-- + tab` | 2. `cat < "--spaces in this file--"`
+
+ **Key concepts learned:**
+ This level teaches us how to deal with filenames that contain spaces. Here are the two methods I used:
+  1. **Using `./` with `Tab` Auto-completion:**
+ Type `cat ./--spaces` and press `Tab`. The terminal will automatically add backslashes (`\`) to escape the spaces and auto-  complete the matching filename.
+  2. **Using Input Redirection (`<`) with Double Quotes (`""`):**
+  Run `cat < "--spaces in this filename--"`. Wrapping the filename inside double quotes forces the terminal to treat the       whole phrase as a single filename instead of separate words.
+
+ ---
+ 
+ 
  
  
    
