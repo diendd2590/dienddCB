@@ -23,6 +23,8 @@
    Adding `./` explicitly tells the terminal to look for the file named `-` in the current working directory (`./`).            Furthermore, we can combine this with the `Tab` key to auto-complete the filename.
  2. **Using Input Redirection (`cat < -`)**: 
    The `<` operator redirects the contents of the file named `-` directly into `cat` for reading.
+---
+
  
  
    
