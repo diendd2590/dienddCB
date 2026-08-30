@@ -42,8 +42,23 @@
  ---
  **4.Level 3 -> 4**
  **Current password:** 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
- **Target password:** 
- 
+ **Target password:** xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq
+
+ **Command used:** 
+ -To connect: `ssh bandit3@bandit.labs.overthewire.org -p 2220`
+ -To solve: 2 ways: 
+   +) `cd inhere` -> `cat ./...Hid + tab`
+   +) `ls -A inhere` -> `cat inhere/...Hid + tab` -> (this way, no need to cd to inhere btw; equal steps)
+
+  **Key concepts learned:**
+  This level teaches us how to find hidden files and understand special directory symbols:
+  * `.` = Current directory
+  * `..` = Parent directory
+  Here is the explanation for the two ways to solve this level:
+  * **Way 1 (Standard approach):** Use `ls -la` to display all hidden files inside the directory, then use `cat` to read the   `...Hiding-From-You` file.
+  * **Way 2 (Faster approach):** Avoid changing directories with `cd`. Instead, use `ls -A inhere` to view hidden files from   the outside, then read it directly using its relative path: `cat inhere/...Hiding-From-You`.
+
+  ---
  
  
    
