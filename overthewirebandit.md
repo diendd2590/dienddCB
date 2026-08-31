@@ -101,4 +101,47 @@
   Here, -user and -group specify the file ownership, -size 33c filters for exactly 33 bytes, and 2>/dev/null hides all the     'Permission denied' errors generated while scanning system folders.
 
  ---
- 
+ **7.Level 7 -> 8**
+  **Current password:** Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+  **Target password:** VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+
+  **Command used:**
+  -To connect: ssh bandit7@bandit.labs.ovethewire.org -p 2220
+  -To solve: `** grep -ri "millionth" data.txt**`
+
+  **Key concepts learned:**
+  This level introduces a new command called grep, which is a very powerful tool for searching text and matching patterns      inside files.
+  Instead of manually scrolling through a huge file like data.txt, we can use grep to extract only the line we need:
+  `grep "millionth" data.txt`
+  This command searches data.txt and prints the line containing the word "millionth", where the password is stored right       next to it.
+  
+  ---
+  **8.Level 8 -> 9**
+  **Current password:** VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+  **Target password:** EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+  
+  **Command used:**
+  -To connect: ssh bandit8@bandit.labs.ovethewire.org -p 2220
+  -To solve: `** sort data.txt | uniq -u**`
+
+  **Key concepts learned:**
+  To solve this level, we need to learn about two new commands: sort and uniq.
+  Here is the solution: sort data.txt | uniq -u
+  The | symbol is the pipe operator, which passes the output of the first command as input to the second. The sort command     arranges lines in alphabetical order, while uniq -u prints only the unique line (the line that appears exactly once).
+  It's crucial to know that uniq can only compare adjacent lines. If duplicate lines are scattered throughout the file, uniq   won't detect them unless we run sort first to group identical lines together.
+
+  ---
+  **9.Level 9 -> 10**
+  **Current password:** EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+  **Target password:** B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+  
+  **Command used:**
+  -To connect: ssh bandit9@bandit.labs.ovethewire.org -p 2220
+  -To solve: `strings data.txt | grep "=="`
+
+  **Key concepts learned:**
+  When dealing with a file full of unreadable binary data, we can use the strings command to extract only human-readable       text.
+  To solve this level, we combine strings and grep using the pipe operator | to find lines containing several = signs:
+  strings data.txt | grep "=="
+  The strings command strips away all binary garbage, and grep then filters the clean text to reveal the password next to      the '=' markers."
+  
