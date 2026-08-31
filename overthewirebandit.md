@@ -59,6 +59,28 @@
   * **Way 2 (Faster approach):** Avoid changing directories with `cd`. Instead, use `ls -A inhere` to view hidden files from   the outside, then read it directly using its relative path: `cat inhere/...Hiding-From-You`.
 
   ---
- 
- 
+  **5.Level 4 -> 5**
+  **Current password:**xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq
+  **Target password:** 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+
+  **Command used:**
+  -To connect: ssh bandit4@bandit.labs.ovethewire.org -p 2220
+  -To solve: `file inhere/*` -> `cat inhere/-file07`
+
+  **Key concepts learned:**
+   This level teaches us how to identify file formats using the file command.
+   When we encounter a lot of files in a directory, checking or reading them one by one using cat is really inefficient.        Instead, we can combine the file command with a wildcard * to check all file types at once, like file inhere/*.
+   Here, * means all files inside the inhere directory. Once we run this, we can easily spot the only ASCII text file           containing the password.
    
+ ---
+ **6.Level 5 -> 6**
+  **Current password:** 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+  **Target password:** pXa26xhMWaC2SvDotA4r9EgZkulOeSB
+
+  **Command used:**
+  -To connect: ssh bandit5@bandit.labs.ovethewire.org -p 2220
+  -To solve: `cd inhere` -> `cat ./maybehere07/.file2`
+
+  **Key concepts learned:**
+  This level teaches us how to use the find command with specific criteria, especially file size. Here is the command we       need: `find inhere -size 1033c` .
+  We can also append 2>/dev/null at the end to suppress all 'Permission denied' error messages, keeping our output clean.
