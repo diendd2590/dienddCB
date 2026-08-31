@@ -84,3 +84,21 @@
   **Key concepts learned:**
   This level teaches us how to use the find command with specific criteria, especially file size. Here is the command we       need: `find inhere -size 1033c` .
   We can also append 2>/dev/null at the end to suppress all 'Permission denied' error messages, keeping our output clean.
+
+  ---
+  **6.Level 6 -> 7**
+  **Current password:** pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+  **Target password:** Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+
+  **Command used:**
+  -To connect: ssh bandit6@bandit.labs.ovethewire.org -p 2220
+  -To solve: `** find / -user bandit7 -group bandit6 2>/dev/null**` -> `cat /var/lib/dpkg/info/bandit7.password`
+
+  **Key concepts learned:**
+  Similar to the previous level, this level requires us to use the find command, but with additional property filters like -   user and -group.
+  Since the file is stored somewhere on the server, we need to search starting from the root directory /:
+  `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`
+  Here, -user and -group specify the file ownership, -size 33c filters for exactly 33 bytes, and 2>/dev/null hides all the     'Permission denied' errors generated while scanning system folders.
+
+ ---
+ 
