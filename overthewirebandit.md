@@ -144,4 +144,20 @@
   To solve this level, we combine strings and grep using the pipe operator | to find lines containing several = signs:
   strings data.txt | grep "=="
   The strings command strips away all binary garbage, and grep then filters the clean text to reveal the password next to      the '=' markers."
+
+  ---
+  **10.Level 10 -> 11**
+  **Current password:** B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+  **Target password:** pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+  
+  **Command used:**
+  -To connect: ssh bandit10@bandit.labs.ovethewire.org -p 2220
+  -To solve: `strings data.txt | base64 -d"`
+
+  **Key concepts learned:**
+  Basically, this level introduces a new encoding scheme called Base64 (see base64.md for a deeper breakdown of the theory).
+  To solve this challenge, we use the command base64 -d data.txt, where the -d flag stands for decode. This decodes the        Base64 string back into readable ASCII text to reveal the password.
+
+  ---
+  
   
