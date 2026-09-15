@@ -13,6 +13,7 @@
 1. Là áp dụng '<<' và '>>' trong python cú pháp của nó sẽ là 'a << n' và 'a >> n' biểu thị cho dịch các bits sang bên trái hoặc bên phải n bước và đồng nghĩa với a * 2 ^ n và  int(a / 2 ^ n) chia nguyên thì thay vì dùng cộng trừ nhân chia thì cái này chạy nhanh hơn nhiều
 2. Là áp dụng '&' hay AND ta hiểu cách ns so sánh và hoạt động các bit như bảng trên có thể lấy ví dụ thao tác khi đổi từ dec sang base64: thì ta hiểu mỗi chữ cái t nhập vào đều có giá trị là 1 bytes vs trg hợp có dấu như tiếng việt như 'ô' thì ns là 2 bytes emoji là 3 - 4 bytes , 1 bytes = 8 bits thì base64 đơn giản là tách ns ra thành nhóm 6 bit thay vì 8 và đổi vs bảng đối chiếu base 64
 
+```text
 Phần đằng trước (A & B)     |  6 bit khối C
   ?  ?  ?  ?  ?  ?  ?  ?  ? |  1  0  1  1  0  1   (Dãy bit nguyên bản của C)
 & 0  0  0  0  0  0  0  0  0 |  1  1  1  1  1  1   (Số 63 dạng nhị phân)
