@@ -13,3 +13,5 @@ def brute_caesar(s):
 
 s = input("Nhập vào xâu kí tự cần giải: ")
 brute_caesar(s)
+
+#Đây là code brute force mã caesar 26 cách thì mã caesar chỉ hiểu là ns là dịch bao nhiêu đơn vị th
