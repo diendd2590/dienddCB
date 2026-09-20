@@ -49,3 +49,8 @@ while True:
         print(f"Với k = {k} thì flag là:", flag)
         break
     k += 1
+
+```
+<img width="374" height="49" alt="image" src="https://github.com/user-attachments/assets/24f53645-3b90-4656-9064-63535d110619" />
+
+thì đây là flag
